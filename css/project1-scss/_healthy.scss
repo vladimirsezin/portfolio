@@ -1,0 +1,159 @@
+.healthy {
+  display: flex;
+  padding: 0 220px;
+
+  padding-bottom: 10px;
+
+  &__image {
+    align-self: center;
+    width: 581px;
+    height: 468px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    gap: 10px;
+  }
+
+  &__title {
+    display: inline-flex;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.15;
+    align-items: baseline;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-weight: 200;
+  }
+
+  &__stats {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 800px;
+  }
+
+  &__stat {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    &-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: #66a104;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    &-label {
+      font-size: 1.1rem;
+      color: #333;
+      font-weight: 500;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 4vw;
+  }
+  .healthy {
+    flex-direction: column-reverse;
+    margin-top: 50px;
+    gap: 30px;
+    padding: 0 20px;
+
+    &__content {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+    }
+
+    &__title {
+      font-size: clamp(22px, 5vw, 26px);
+      width: 100%;
+      text-align: center;
+    }
+    &__text {
+      font-size: 14px;
+    }
+    &__stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__stat {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .healthy {
+    flex-direction: column-reverse;
+    margin-top: 50px;
+    gap: 30px;
+    padding: 0 20px;
+
+    &__content {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+    }
+
+    &__title {
+      font-size: 18px;
+      width: 100%;
+      text-align: center;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+    &__stat {
+      width: 100%;
+      min-width: 0;
+      &-number {
+        font-size: 30px;
+      }
+      &-label {
+        font-size: 14px;
+      }
+    }
+  }
+}

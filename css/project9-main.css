@@ -1,0 +1,57 @@
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+   
+    overflow-x: hidden;
+    font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  
+  
+  
+}
+
+body {
+    width: 100%;
+    
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: inherit;
+}
+.container{
+     max-width: 1366px;
+    padding:20px 95px;
+    margin:0 auto;
+}

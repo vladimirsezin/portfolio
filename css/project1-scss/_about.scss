@@ -1,0 +1,84 @@
+.hr {
+  border: none;
+  height: 1px;
+  width: 80%;
+  margin: 10px auto;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    rgba(128, 128, 128, 0.5) 25%,
+    rgba(128, 128, 128, 0.5) 75%,
+    white 100%
+  );
+}
+.about {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 220px;
+
+  &__title {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+  }
+
+  &__content {
+    // ← исправлено с about_description
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    padding-bottom: 50px;
+    justify-content: center;
+  }
+
+  &__text {
+    width: 700px;
+    font-size: 24px;
+  }
+
+  &__image {
+    width: 362px;
+    height: 362px;
+    align-self: center;
+  }
+
+  // Медиа-запрос для адаптивности
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    margin-top: 30px;
+
+    &__content {
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 30px;
+    }
+
+    &__text {
+      width: 100%;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    &__image {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+    }
+
+    &__title {
+      font-size: 26px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__text {
+      font-size: 16px;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+  }
+}
