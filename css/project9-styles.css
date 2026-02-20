@@ -1,3 +1,37 @@
+/* ============================================
+   Coffee Haven - Modern Responsive CSS
+   ============================================ */
+
+/* CSS Custom Properties */
+:root {
+    /* Colors */
+    --color-primary: #603809;
+    --color-accent: #F9C06A;
+    --color-accent-soft: #f9c06a0d;
+    --color-text: #1e1e1e;
+    --color-text-light: #603809;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    
+    /* Typography */
+    --font-script: "Clicker Script", cursive;
+    --font-serif: "Playfair Display", serif;
+    --font-sans: system-ui, -apple-system, sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;    /* 8px */
+    --spacing-sm: 1rem;      /* 16px */
+    --spacing-md: 1.5rem;    /* 24px */
+    --spacing-lg: 2rem;      /* 32px */
+    --spacing-xl: 3rem;      /* 48px */
+    --spacing-2xl: 4rem;     /* 64px */
+    
+    /* Layout */
+    --max-width: 1200px;
+    --border-radius: 24px;
+    --transition: all 0.3s ease;
+}
+
 /* Header */
 .header {
     position: relative;
@@ -7,7 +41,7 @@
 .header__background {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding-bottom: 10px;
 }
 
@@ -49,6 +83,7 @@
     position: relative;
     z-index: 3;
     color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
 }
 
 .header__bar {
@@ -66,7 +101,7 @@
 
 .header__nav-list {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     list-style: none;
     text-transform: capitalize;
 }
@@ -98,7 +133,7 @@
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    max-width: 527px;
+    max-width: 100%;
     gap: 15px;
     text-align: left;
     padding-bottom: 10px;
@@ -106,17 +141,18 @@
 
 .hero__title {
     font-family: "Clicker Script", cursive;
-    font-size: 220px;
+    font-size: clamp(3rem, 10vw, 8rem);
     font-weight: 400;
     margin: 0;
+    line-height: 1;
 }
 
 .hero__subtitle {
-    font-size: 22px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
 .hero__description {
-    font-size: 20px;
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
 }
 
 /* Main button */
@@ -135,25 +171,33 @@
 /* Discover section */
 .discover {
     display: flex;
-    gap: 100px;
+    gap: 2rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .discover__content {
     display: flex;
     flex-direction: column;
-    max-width: 585px;
-    gap: 30px;
+    max-width: 100%;
+    gap: 20px;
+    flex: 1;
+    min-width: 300px;
 }
 
 .discover__description {
-    font-size: 20px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 400;
+    line-height: 1.6;
 }
 
 .discover__image {
-    width: 500px;
-    height: 484px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 500 / 484;
+    flex: 1;
+    min-width: 300px;
 }
 
 /* Background elements */
@@ -179,9 +223,10 @@
 }
 
 .titles {
-    font-size: 54px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     color: #603809;
+    line-height: 1.2;
 }
 
 .coffee-blend__description {
@@ -191,10 +236,14 @@
 
 /* Coffee cards */
 .coffee-blend__gallery {
-    margin-top: 16px;
+    margin-top: 2rem;
     display: flex;
-    gap: 20px;
-    width: 1180px;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1.25rem;
 }
 
 .coffee-card {
@@ -203,7 +252,9 @@
     flex-direction: column;
     align-items: center;
     width: 280px;
-    height: 364px;
+    max-width: 100%;
+    height: auto;
+    min-height: 364px;
 }
 
 .coffee-card__image {
@@ -226,7 +277,7 @@
     background-color: #f9c06a0d;
     border: 1px solid #F9C06A;
     text-align: center;
-    padding: 14px 20px;
+    padding: 1rem 1.25rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -254,10 +305,15 @@
 
 /* Different cards */
 .different__gallery {
-    margin-top: 16px;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1.25rem;
 }
 
 .different__card {
@@ -267,7 +323,8 @@
     align-items: center;
     text-align: center;
     width: 280px;
-    height: 284px;
+    max-width: 100%;
+    height: auto;
 }
 
 .different-card__content {
@@ -278,16 +335,16 @@
     width: 100%;
     background-color: #f9c06a0d;
     border: 1px solid #F9C06A;
-    padding: 36px 10px;
-    width: 280px;
-    height: 284px;
+    padding: 2rem 1rem;
+    min-height: 284px;
+    height: auto;
 }
 
 .different-card__name {
     font-family: "Playfair Display", serif;
     font-weight: 700;
     color: #603809;
-    font-size: 28px;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .different_icon {
@@ -296,17 +353,17 @@
 }
 
 .different_subtext {
-    margin-top: 32px;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .different-subtitle {
-    font-size: 30px;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
     font-weight: 700;
     color: #603809;
     text-align: center;
@@ -316,7 +373,7 @@
 .coffee-section {
     position: relative;
     width: 100%;
-    min-height: 600px;
+    min-height: 500px;
 }
 
 .coffee-section__background {
@@ -340,31 +397,34 @@
     position: relative;
     z-index: 2;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 600px;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    min-height: 400px;
+    text-align: center;
 }
 
 .chance-text {
-    flex: 1;
     color: white;
-    max-width: 575px;
+    max-width: 100%;
+    width: 100%;
 }
 
 .chance__title {
-    font-size: 54px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .chance-text p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     line-height: 1.6;
     margin-bottom: 2rem;
-    max-width: 400px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Footer */
@@ -377,7 +437,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 1.5rem;
 }
 
 .contacts {
@@ -402,4 +462,152 @@ footer {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large tablets and below */
+@media (max-width: 992px) {
+    .coffee-blend__gallery,
+    .different__gallery {
+        gap: 2rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .header__content {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .hero {
+        margin-top: var(--spacing-md);
+    }
+
+    .discover {
+        gap: var(--spacing-md);
+    }
+
+    .blast__left,
+    .blast__right {
+        display: none;
+    }
+
+    .coffee-blend__gallery,
+    .different__gallery {
+        gap: var(--spacing-sm);
+        padding: 0 var(--spacing-xs);
+    }
+    .coffee-blend__gallery {
+        gap:2rem;
+    }
+    
+    .coffee-card,
+    .different__card {
+        width: calc(50% - var(--spacing-sm));
+        max-width: 280px;
+    }
+
+    .chance {
+        padding: var(--spacing-lg) var(--spacing-md);
+        min-height: 400px;
+    }
+
+    .footer__bar {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+
+    .footer .header__logo-link {
+        font-size: 1.5rem;
+    }
+
+    .contacts {
+        gap: 0.75rem;
+    }
+
+    .icons {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .header__content {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .header__bar {
+       
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+
+    .header__nav-list {
+        gap: var(--spacing-sm);
+        font-size: 0.875rem;
+    }
+
+    .header__logo-link {
+        font-size: 1.75rem;
+    }
+
+    .hero {
+        margin-top: 50px;
+    }
+
+    .discover {
+        gap: var(--spacing-sm);
+    }
+
+    .coffee-card,
+    .different__card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .chance {
+        padding: var(--spacing-md) var(--spacing-sm);
+        min-height: 350px;
+    }
+
+    .footer__bar {
+        gap: var(--spacing-xs);
+    }
+
+    .footer .header__logo-link {
+        font-size: 1.25rem;
+    }
+
+    .contacts {
+        gap: 0.5rem;
+    }
+
+    .icons {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+    .header__nav-list {
+        gap: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .coffee-card,
+    .different__card {
+        max-width: 100%;
+    }
+
+    .main__button {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.75rem;
+        max-width: 150px;
+    }
 }
