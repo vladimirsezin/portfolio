@@ -75,6 +75,12 @@ img {
   height: 64px;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .logo {
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -148,7 +154,6 @@ img {
   color: var(--text, #f6f6f9);
   border-radius: 50%;
   transition: background-color var(--transition-fast), color var(--transition-fast);
-  margin-left: 8px;
 }
 
 .header-cta:hover {
